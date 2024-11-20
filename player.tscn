@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnu34bxehful6"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_kxpkc"]
+[ext_resource type="Texture2D" uid="uid://dj4cmvbhmy4et" path="res://PNG/Hitman 1/hitman1_gun.png" id="2_r4jht"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_05aav"]
+radius = 20.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_kxpkc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_r4jht")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-14, 1)
+shape = SubResource("CircleShape2D_05aav")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(18, 7)
+target_position = Vector2(2000, 0)
